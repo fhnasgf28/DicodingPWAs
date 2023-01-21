@@ -1,0 +1,195 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    font-size: 12px;
+    color: #111111;
+}
+
+main {
+    min-height: 100vh;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: #069a8e;
+    color: red;
+    padding: 8px;
+    z-index: 100;
+ }
+  
+.skip-link:focus {
+    top: 0;
+}
+
+button {
+    padding: 10px;
+    margin-right: 15px;
+    background-color: rgb(95, 190, 178);
+    border: none;
+}
+
+/*
+ * Header
+ *
+ */
+.header {
+    display: flex;
+    position: relative;
+    z-index: 8;
+    background-color: #069a8e;
+}
+.header__inner {
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header__title {
+    font-family: 'Cookie', cursive;
+    font-weight: 300;
+    font-size: 4em;
+    display: inline-block;
+    color: white;
+}
+
+.header__menu {
+    margin-left: 20px;
+}
+
+/*
+ * Top level navigation
+ */
+
+.nav {
+    width: 100%;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.nav__list {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.nav__item {
+    width: 30%;
+    text-align: center;
+    line-height: 24px;
+    padding: 24px;
+    text-transform: uppercase;
+}
+
+.nav a {
+    text-decoration: none;
+    color: rgb(51, 50, 50);
+    padding: 16px 10px;
+    font-family: "Quicksand", sans-serif;
+}
+
+.nav a:hover {
+    text-decoration: none;
+    color: rgb(241, 237, 237);
+    background-color: #069a8e;
+    width: 40%;
+    height: 40%;
+    font-family: "Quicksand";
+    border-radius: 5px;
+}
+
+footer{
+    padding: 10px;
+    background-color: #069a8e;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+.like {
+    font-size: 18px;
+    position: fixed;
+    bottom: 30px;
+    right: 16px;
+    background-color: rgb(189, 37, 49);
+    color: rgb(245, 77, 236);
+    border: 0;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.restaurant__not__found {
+    font-size: 15px;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+}
+
+@media screen and (max-width: 499px) {
+    .nav {
+        z-index: 6;
+        background-color: #069a8e;
+        width: 300px;
+        position: absolute;
+
+        /* This trasform moves the drawer off canvas. */
+        -webkit-transform: translateY(-250px);
+        transform: translateY(-250px);
+
+        /* Optionally, we animate the drawer. */
+        transition: transform 0.3s ease;
+    }
+
+    .open {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    .nav__item {
+        display: list-item;
+        border-bottom: 1px solid #87e0d9;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .header__menu {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main {
+        max-width: 1200px;
+        margin: auto;
+    }
+}
+
+
